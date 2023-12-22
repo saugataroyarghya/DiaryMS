@@ -1,12 +1,17 @@
 #include "DiaryManager.h"
 #include <iostream>
 
+DiaryManager::DiaryManager()
+{
+    std::cout<<"Welcome to the Diary"<<std::endl;
+    util->clearScreen();
+}
+
 void DiaryManager::interact()
 {
     while(1)
     {
-        std::cout << std::endl;
-        std::cout << std::endl;
+        
         std::cout << "Diary Manager" << std::endl;
         std::cout << "------------------" << std::endl;
         std::cout << "1. Add new entry" << std::endl;
@@ -23,6 +28,7 @@ void DiaryManager::interact()
             case 1:
                 std::cout << "Add new entry" << std::endl;
                 this->add();
+                util->clearScreen();
                 break;
             case 2:
                 std::cout << "List all entries" << std::endl;
@@ -43,13 +49,15 @@ void DiaryManager::interact()
 
 void DiaryManager::list()
 {
-    int i = 0;
+    int i = 1;
     std::cout<<std::endl;
     for (auto entry : this-> entries)
     {
         std::cout << i <<": "<< entry.getTitle() << std::endl;
         i++;
     }
+    std::cout<<"------------------"<<std::endl;
+
 }
 
 void DiaryManager::add()
@@ -65,4 +73,7 @@ void DiaryManager::add()
     newEntry.setTitle(title);
     newEntry.setMessage(message);
     this->entries.push_back(newEntry);
+    
+    std::cout << "Entry added successfully" << std::endl;
+
 }

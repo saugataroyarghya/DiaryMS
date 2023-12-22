@@ -10,9 +10,7 @@ DiaryEntry::DiaryEntry(std::string date, std::string time, std::string title, st
     this->message = message;
 }
 
-DiaryEntry::DiaryEntry()
-{
-    
+DiaryEntry::DiaryEntry(){
 }
 
 
