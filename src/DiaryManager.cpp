@@ -28,7 +28,6 @@ void DiaryManager::interact()
             case 1:
                 std::cout << "Add new entry" << std::endl;
                 this->add();
-                util->clearScreen();
                 break;
             case 2:
                 std::cout << "List all entries" << std::endl;
@@ -72,6 +71,8 @@ void DiaryManager::add()
     std::getline(std::cin, message);
     newEntry.setTitle(title);
     newEntry.setMessage(message);
+    newEntry.setDate(util->currentDate());
+    newEntry.setTime(util->currentTime());
     this->entries.push_back(newEntry);
     
     std::cout << "Entry added successfully" << std::endl;

@@ -17,11 +17,11 @@ DiaryEntry::DiaryEntry(){
 //getter and setter methods
 void DiaryEntry::setDate(std::string date)
 {
-    this->date = "placeholder"; // TODO: remove
+    this->date = date; 
 }
 void DiaryEntry::setTime(std::string time)
 {
-    this->time = "placeholder"; // TODO: remove
+    this->time = time; 
 }
 void DiaryEntry::setTitle(std::string title)
 {
