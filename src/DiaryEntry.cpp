@@ -1,6 +1,21 @@
 #include "DiaryEntry.h"
 #include <string>
 
+//Constructor
+DiaryEntry::DiaryEntry(std::string date, std::string time, std::string title, std::string message)
+{
+    this->date = date;
+    this->time = time;
+    this->title = title;
+    this->message = message;
+}
+
+DiaryEntry::DiaryEntry()
+{
+    
+}
+
+
 //getter and setter methods
 void DiaryEntry::setDate(std::string date)
 {

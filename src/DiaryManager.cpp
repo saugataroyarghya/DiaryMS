@@ -5,6 +5,8 @@ void DiaryManager::interact()
 {
     while(1)
     {
+        std::cout << std::endl;
+        std::cout << std::endl;
         std::cout << "Diary Manager" << std::endl;
         std::cout << "------------------" << std::endl;
         std::cout << "1. Add new entry" << std::endl;
@@ -41,14 +43,26 @@ void DiaryManager::interact()
 
 void DiaryManager::list()
 {
+    int i = 0;
     std::cout<<std::endl;
     for (auto entry : this-> entries)
     {
-        std::cout << entry.getTitle() << std::endl;
+        std::cout << i <<": "<< entry.getTitle() << std::endl;
+        i++;
     }
 }
 
 void DiaryManager::add()
 {
-
+    DiaryEntry newEntry;
+    std::string title;
+    std::string message;
+    std::cout << "Title: ";
+    std::cin.ignore();
+    std::getline(std::cin, title);
+    std::cout << "Message: ";
+    std::getline(std::cin, message);
+    newEntry.setTitle(title);
+    newEntry.setMessage(message);
+    this->entries.push_back(newEntry);
 }
