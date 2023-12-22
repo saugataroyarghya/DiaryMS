@@ -20,6 +20,8 @@ public:
     std::string getTitle();
     std::string getMessage();
 
+    void print();
+
     DiaryEntry(std::string date, std::string time, std::string title, std::string message);
     DiaryEntry();
 

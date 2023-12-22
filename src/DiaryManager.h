@@ -15,6 +15,7 @@ public:
     void interact();
     void list();
     void add();
+    
     DiaryManager();
 };
 

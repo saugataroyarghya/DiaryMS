@@ -1,4 +1,5 @@
 #include "DiaryEntry.h"
+#include <iostream>
 #include <string>
 
 //Constructor
@@ -46,4 +47,17 @@ std::string DiaryEntry::getTitle()
 std::string DiaryEntry::getMessage()
 {
     return this->message;
+}
+
+
+void DiaryEntry::print()
+{
+    std::cout<<std::endl;
+    std::cout<<"----------------------------------------"<<std::endl;
+    std::cout << "Date: " << this->date << std::endl;
+    std::cout << "Time: " << this->time << std::endl;
+    std::cout << "Title: " << this->title << std::endl;
+    std::cout << "Message: " << this->message << std::endl;
+    std::cout<<"----------------------------------------"<<std::endl;
+    std::cout<<std::endl;
 }

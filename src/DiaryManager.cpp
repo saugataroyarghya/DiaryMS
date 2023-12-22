@@ -55,9 +55,14 @@ void DiaryManager::list()
         std::cout << i <<": "<< entry.getTitle() << std::endl;
         i++;
     }
-    std::cout<<"------------------"<<std::endl;
 
+    int select;
+    std::cout<<"Select an entry: ";
+    std::cin>>select;
+    std::cout<<std::endl;
+    this->entries[select-1].print();
 }
+
 
 void DiaryManager::add()
 {
