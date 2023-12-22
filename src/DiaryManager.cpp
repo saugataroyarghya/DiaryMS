@@ -20,9 +20,11 @@ void DiaryManager::interact()
         {
             case 1:
                 std::cout << "Add new entry" << std::endl;
+                this->add();
                 break;
             case 2:
                 std::cout << "List all entries" << std::endl;
+                this->list();
                 break;
             case 3:
                 std::cout << "Search entries" << std::endl;
@@ -35,4 +37,18 @@ void DiaryManager::interact()
                 break;
         }
     }
+}
+
+void DiaryManager::list()
+{
+    std::cout<<std::endl;
+    for (auto entry : this-> entries)
+    {
+        std::cout << entry.getTitle() << std::endl;
+    }
+}
+
+void DiaryManager::add()
+{
+
 }

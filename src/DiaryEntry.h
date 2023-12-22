@@ -14,7 +14,13 @@ public:
     void setTime(std::string time);
     void setTitle(std::string title);
     void setMessage(std::string message);
+
+    std::string getDate();
+    std::string getTime();
+    std::string getTitle();
+    std::string getMessage();
+
 };
 
 
-#endif // DIARYENTRY_H
+#endif //DIARYENTRY_H
