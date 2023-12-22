@@ -90,10 +90,12 @@ void DiaryManager::add()
     std::ofstream outFile("encrypted_diary.txt", std::ios::app | std::ios::binary);
         if (outFile.is_open()) {
             std::string encryptedTitle = encryptData(title);
-            std::string encryptedMessage = encryptData(message);
+            std::string encryptedMessage = encryptData(message); 
+            std::string encryptedDate = encryptData(util->currentDate());
+            std::string encryptedTime = encryptData(util->currentTime());
 
             // Write encrypted data to the file
-            outFile << encryptedTitle << '\n' << encryptedMessage << '\n';
+            outFile << encryptedTitle << '\n' << encryptedMessage << '\n' << encryptedDate << '\n' << encryptedTime << '\n';
 
             outFile.close();
         } else {
