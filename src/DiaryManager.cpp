@@ -1,5 +1,8 @@
 #include "DiaryManager.h"
 #include <iostream>
+#include <openssl/evp.h>
+#include <fstream>
+#include <string>
 
 DiaryManager::DiaryManager()
 {
@@ -69,17 +72,46 @@ void DiaryManager::add()
     DiaryEntry newEntry;
     std::string title;
     std::string message;
+
     std::cout << "Title: ";
     std::cin.ignore();
     std::getline(std::cin, title);
     std::cout << "Message: ";
     std::getline(std::cin, message);
+   
     newEntry.setTitle(title);
     newEntry.setMessage(message);
     newEntry.setDate(util->currentDate());
     newEntry.setTime(util->currentTime());
-    this->entries.push_back(newEntry);
     
+    this->entries.push_back(newEntry); 
     std::cout << "Entry added successfully" << std::endl;
+
+    std::ofstream outFile("encrypted_diary.txt", std::ios::app | std::ios::binary);
+        if (outFile.is_open()) {
+            std::string encryptedTitle = encryptData(title);
+            std::string encryptedMessage = encryptData(message);
+
+            // Write encrypted data to the file
+            outFile << encryptedTitle << '\n' << encryptedMessage << '\n';
+
+            outFile.close();
+        } else {
+            std::cerr << "Error: Unable to open file for writing." << std::endl;
+        }
+
+}
+
+std::string DiaryManager::encryptData(std::string data)
+{
+    // Will be Implemented later
+    return data;
+
+}
+
+std::string DiaryManager::decryptData(std::string data)
+{
+    // Will be Implemented later
+    return data;
 
 }

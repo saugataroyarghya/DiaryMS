@@ -8,14 +8,16 @@
 
 class DiaryManager
 {
-   std::vector<DiaryEntry> entries;
-   Utilities* util = new Utilities();
+    std::vector<DiaryEntry> entries;
+    Utilities* util = new Utilities();
+
+    std::string encryptData(std::string data);
+    std::string decryptData(std::string data);
 
 public: 
     void interact();
     void list();
     void add();
-    
     DiaryManager();
 };
 
