@@ -1,5 +1,6 @@
 #include "Utilities.h"
 #include <iostream>
+#include <ctime>
 
 void Utilities::clearScreen()
 {

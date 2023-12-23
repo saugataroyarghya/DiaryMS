@@ -1,6 +1,6 @@
 #include "DiaryManager.h"
 #include <iostream>
-#include <openssl/evp.h>
+//#include <openssl/evp.h>
 #include <fstream>
 #include <string>
 
