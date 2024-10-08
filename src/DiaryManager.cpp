@@ -25,7 +25,12 @@ void DiaryManager::interact()
 
         int option;
         std::cin >> option;
-
+        while(!(srd::cin >> option))
+        {
+            std::cin.clear();
+            std::cin.ignore(123, '\n');
+            std::cout << "Invalid input. Please enter a number: ";
+        }
         switch(option)
         {
             case 1:
@@ -63,7 +68,14 @@ void DiaryManager::list()
     std::cout<<"Select an entry: ";
     std::cin>>select;
     std::cout<<std::endl;
-    this->entries[select-1].print();
+
+    if (select > 0 && select <= this->entries.size()){
+        this->entries[select-1].print();
+    }
+    else
+    {
+        std::cout<<"Invalid selection"<<std::endl;
+    }
 }
 
 
